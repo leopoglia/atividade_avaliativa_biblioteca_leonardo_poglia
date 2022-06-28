@@ -6,7 +6,7 @@ async function buscarLivros(res){
     const dados = await crud.get("pessoas");
     const array = [];
     array[0] = dados
-    return array;
+    console.log(array);
 }
 
 module.exports = {
