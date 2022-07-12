@@ -4,14 +4,14 @@ const app = express();
 app.use(express.json());
 
 
-const livrosHandler = require("./livros.handler");
+const usuariosHandler = require("./usuarios.handler");
 
 router.get("/", (req, res) => {
-    livrosHandler.buscarLivros().then(dados => res.json(dados))
+    usuariosHandler.buscarUsuarios().then(dados => res.json(dados));
 })
 
 router.post("/", (req, res) => {
-    livrosHandler.cadastrarLivro(req).then(dados => res.json(dados))
+    usuariosHandler.cadastrarUsuario(req).then(dados => res.json(dados));
 })
 
 module.exports = router;
