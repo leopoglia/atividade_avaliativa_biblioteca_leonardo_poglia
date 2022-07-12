@@ -5,7 +5,11 @@ async function buscarUsuarios(){
 }
 
 async function cadastrarUsuario(req){
+    if(req.body.nome && req.body.cpf && req.body.telefone && req.body.alugando){
     return await crud.save("usuarios", 0, req.body);
+    }else{
+        return "Precisa ter os campos nome, cpf, telefone e alugando."
+    }
 }
 
 module.exports = {

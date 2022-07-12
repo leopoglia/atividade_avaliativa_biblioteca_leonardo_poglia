@@ -5,7 +5,11 @@ async function buscarAlugueis(){
 }
 
 async function cadastrarAlugueis(req){
+    if(req.body.cpfCliente){
     return await crud.save("alugueis", 0, req.body);
+    }else{
+        return 'Precisa ter campo cpfCliente'
+    }
 }
 
 module.exports = {

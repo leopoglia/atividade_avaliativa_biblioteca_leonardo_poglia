@@ -5,7 +5,11 @@ async function buscarAutores(){
 }
 
 async function cadastrarAutores(req){
+    if(req.body.nome){
     return await crud.save("autores", 0, req.body);
+    }else{
+        return "Precisa ter o campo de nome."
+    }
 }
 
 module.exports = {
