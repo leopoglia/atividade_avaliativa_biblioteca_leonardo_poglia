@@ -15,5 +15,8 @@ router.use("/editoras", editoras);
 const autores = require("./api/autores/autores.controller");
 router.use("/autores", autores);
 
+const alugueis = require("./api/alugueis/alugueis.controller");
+router.use("/alugueis", alugueis);
+
 
 module.exports = router;

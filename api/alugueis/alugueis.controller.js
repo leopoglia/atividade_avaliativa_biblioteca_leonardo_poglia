@@ -11,7 +11,12 @@ router.get("/", (req, res) => {
 })
 
 router.post("/", (req, res) => {
-    alugueisHandler.cadastrarAlugueis(req).then(dados => res.json(dados))
+    alugueisHandler.cadastrarAluguel(req).then(dados => res.json(dados))
 })
+
+router.delete("/:id", (req, res) => {
+    alugueisHandler.excluirAluguel(req, req.params.id).then(dados => res.json(dados));
+})
+
 
 module.exports = router;
